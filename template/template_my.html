@@ -1,0 +1,39 @@
+<!-- 模板：个人详情~~更多~~收货地址 -->
+<script id="tem_my_address" type="text/html">
+  {{each list item index}}
+  <li class="{{item.is_default == 1 ? 'selected' : ''}}" data-id="{{item.id}}">
+    <h4>{{item.collect_name}}<span>{{item.collect_phone}}</span></h4>
+    <p>{{item.province + item.city + item.area + item.address}}</p>
+    <div class="edit clearfix">
+      <div class="select fl"><i></i>默认地址</div>
+      <div class="fr">
+        <a href="javascript:;" class="btn_delete">删除</a><a href="./my_address.html?id={{item.id}}">编辑</a></div>
+    </div>
+  </li>    
+  {{/each}}
+</script>  
+<!-- 模板：个人详情~~宝宝信息~~兴趣标签 -->
+<script id="tem_baby_tag" type="text/html">
+  {{each list item index}}
+  <li>{{item}}</li>    
+  {{/each}}
+</script>  
+<!-- 模板：我的~~心愿单~~心愿单列表 -->
+<script id="tem_my_wish" type="text/html">
+  {{each list item index}}
+  <div class="flex_com" data-id="{{item.id}}"><a href="./book-city/product-details.html?id={{item.book_id}}">
+      <div class="_delete">
+        <img src="images/coupon/bj_15.png" alt="">
+      </div>
+      <img src="{{item.book_pic}}" alt="" class="book">
+      <p>{{item.book_name}}</p>
+      <p>￥{{item.price}}</p>
+  </a></div>    
+  {{/each}}
+</script> 
+<!-- 模板：标签列表 -->
+<script id="tem_home_label" type="text/html">
+  {{each list item index}}
+  <div class="tag-one {{item.isSelect == 1 ? 'active' : ''}}" data-id="{{item.id}}">{{item.name}}</div>
+  {{/each}}
+</script> 

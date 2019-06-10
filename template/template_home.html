@@ -1,0 +1,55 @@
+<!-- 模板：首页~~搜索列表 -->
+<script id="tem_search_list" type="text/html">
+  {{each list item index}}
+  <li><a href="./book-city/product-details.html?id={{item.id}}">{{item.book_name}}&nbsp;&nbsp;{{item.author}}</a></li>
+  {{/each}}
+</script>  
+<!-- 模板：首页~~标签列表 -->
+<script id="tem_home_label" type="text/html">
+  {{each list item index}}
+  <div class="tag-one {{item.isSelect == 1 ? 'active' : ''}}" data-id="{{item.id}}">{{item.name}}</div>
+  {{/each}}
+</script>  
+<!-- 模板：首页~~banner广告轮播图 -->
+<script id="tem_home_banner" type="text/html">
+  {{each list item index}}
+  <div class="swiper-slide" data-id="{{item.id}}"><a href="{{item.url}}">
+    <img src="{{item.pic}}" />
+    <div class="banner_text"><p>{{@item.title}}</p></div>
+  </a></div>
+ {{/each}}
+</script>  
+<!-- 模板：首页~~最新推荐-最热推荐-猜你喜欢 -->
+<script id="tem_home_newrec" type="text/html">
+  {{each list item index}}
+  <div><a href="./book-city/product-details.html?id={{item.id}}">
+    <div class="img"><img src="{{item.book_pic}}" alt=""></div>
+    <p>{{item.book_name}}</p>
+    <!-- <p>xxxx</p> -->
+  </a></div>    
+  {{/each}}
+</script>  
+<!-- 模板：首页~~借阅排行前1 -->
+<script id="tem_home_borrow" type="text/html">
+  {{each list item index}}
+  {{if index == 0}}
+  <div><a href="./book-city/product-details.html?id={{item.id}}">
+    <div class="img"><img src="{{item.book_pic}}" alt=""></div>
+    <p>{{item.book_name}}</p>
+    <!-- <p>xxxx</p> -->
+  </a></div> 
+  {{/if}}  
+  {{/each}}
+</script>  
+<!-- 模板：首页~~借阅排行后4 -->
+<script id="tem_home_borrow2" type="text/html">
+  {{each list item index}}
+  <div class="borrowBox"><a href="./book-city/product-details.html?id={{item.id}}">
+    <div class="img"><img src="{{item.book_pic}}" alt=""></div>
+    <div class="price">
+      <p>{{item.book_name}}</p>
+       <!-- <p>XXXX</p> -->
+    </div>
+  </a></div> 
+  {{/each}}
+</script>  

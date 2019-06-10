@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>悦绘亲子图书馆</title>
+    <link href="images/login/logo.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" href="./css/satchel.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/fitremtaobao.js"></script>
+    <script src="./js/template.js"></script>
+    <script src="./js/vip_isBeOverdue.js"></script>
+</head>
+<body>
+    <div class="order-details bar-details wrap">
+        <div class="user-info" id="user-info">
+            
+        </div>
+        <div class="no-adress user-info">
+            <div>暂无收货地址</div>
+            <div><a href="./page/my/my_address.html">去设置>></a></div>
+        </div>
+        <div class="commodity-info">
+            <div id="bag-books"></div>
+            <div class="commodity-add"><a href="./book-city/index.html">
+                <div class="text-color all-center">
+                    <img src="./images/satchel/add.png" alt="">
+                    <span>您还可以借阅<span class="book-count"></span>本书</span>
+                </div>
+            </a></div>
+            <div class="delivery text-color">
+                <span>配送方式</span>
+                <span class="text-right">物流配送</span>
+            </div>
+            <div class="message text-color">
+                <span>买家留言：</span>
+                <textarea placeholder="填写内容已和卖家协商确认" maxlength="50"></textarea>
+            </div>
+            <div class="total text-color">
+                <span class="text-right">
+                    共<span class="book-total">0</span>件商品
+                </span>
+            </div>
+        </div>
+        <div class="submit_box">
+          <div class="give-back text-color wrap">
+            <div class="_one">您有书籍尚未归还，请<a href="./order-status.html?index=1">归还</a>后再来借阅</div>
+            <div class="_two">会员尊享借阅特权，<a href="./page/center/per_viplist.html">加入会员&gt;&gt;</a></div>
+            <div class="_three"><img src="./images/satchel/submit.png" alt="" id="bag-pay"></div>
+          </div>
+        </div>
+    </div>
+  <!--js脚本-->  
+  <script src="./js/fastclick.js"></script>
+  <script src="./js/md5.js"></script>
+  <script src="./js/paea_bag-order.js"></script>
+  <!-- 腾讯统计 -->
+  <script>
+    var _mtac = {"performanceMonitor":1,"senseQuery":1};
+    (function() {
+      var mta = document.createElement("script");
+      mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+      mta.setAttribute("name", "MTAH5");
+      mta.setAttribute("sid", "500624689");
+      mta.setAttribute("cid", "500624690");
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  </script>
+</body>
+</html>

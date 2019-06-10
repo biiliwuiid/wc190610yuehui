@@ -1,0 +1,66 @@
+<script id="tem_bookDetails" type="text/html">
+    {{each list as item}}
+    <!--书本图片-->
+    <div class="book-pic flex_com">
+        <div class="img">
+            <img src="{{item.book_pic}}" alt="">
+        </div>
+    </div>
+    <!--名字，作者-->
+    <div class="the-author flex_com">
+        <!--书名-->
+        <div class="bookname flex_row">
+            <span>{{item.book_name}}</span>
+        </div>
+        <div class="author flex_row">
+            <span>作者</span>
+            <span>{{item.author}}</span>
+        </div>
+        <div class="_status flex_row">
+            <span>当前状态：</span>
+            {{if item.is_borrow === 1}}
+            <div class="canborrow flex_row">
+                <span>可借阅</span>
+                <i></i>
+            </div>
+            {{/if}}
+            {{if item.is_pay === 1}}
+            <div class="canbuy flex_row">
+                <span>可购买</span>
+                <i></i>
+            </div>
+            {{/if}}
+        </div>
+        <!--价格-->
+        <div class="vip_pirce flex_row">
+            <button>会员价</button>
+            <span>￥</span>
+            <span>{{item.new_price}}</span>
+        </div>
+        <!--星级-->
+        <div class="grade flex_row">
+            <div class="pinfen flex_row">
+                <span class="num_grade">5.0</span>
+            </div>
+            <div class="lookstar flex_row">
+                <i class="th1 str2"></i>
+                <i class="th2 str2"></i>
+                <i class="th3 str2"></i>
+                <i class="th4 str2"></i>
+                <i class="th5 str2"></i>
+            </div>
+        </div>
+    </div>
+    <!--内容介绍-->
+    <div class="lr-intro flex_com">
+        <div class="lr-intro-nav flex_row">
+            <i class="shu"></i>
+            <span>书籍详情</span>
+            <i class="shur"></i>
+        </div>
+        <div class="img_list">
+          {{@item.detail}}
+        </div>
+    </div>
+    {{/each}}
+</script>

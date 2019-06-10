@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>悦绘亲子图书馆</title>
+    <link href="images/login/logo.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/swiper.min.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/fitremtaobao2.js"></script>
+    <script src="./js/template.js"></script>
+    <script src="./js/vip_isBeOverdue.js"></script>
+</head>
+<body>
+<div class="body body_index">
+<!--归还弹窗-->
+<div class="revert">
+    <div class="whitefixed flex_com">
+        <div class="flri flex_row">
+            <div></div>
+            <div></div>
+        </div>
+        <span>没登录/注册悦绘读者?</span> 
+        <span>点击这里登录、注册吧！</span>
+        <div class="anniu-btn flex_row">
+            <button id="login">注册/登录</button>
+        </div>
+    </div>
+</div>
+   <!--头部-->
+   <div class="header flex_row">
+       <div class="address flex_row">
+           <img src="images/index/index_60.png" alt="">
+           <span id="cur_city">宁波市</span>
+       </div>
+       <div class="search">
+           <input type="text" placeholder="搜索感兴趣的书吧" maxlength="26" id="search_book">
+           <img src="images/index/index_62.png" alt="">
+           <ul class="search_result"></ul>
+       </div>
+   </div>
+<!---->
+<!--图片轮播-->
+   <div class="swiper-container home_banner">
+     <div class="swiper-wrapper" id="home_banner"></div>
+     <div class="swiper-pagination"></div>
+   </div>
+   <!---->
+   <!--会籍介绍，加入我们-->
+   <div class="introduce">
+     <div class="wrap">
+       <div class="joinus flex_row">
+            <div class="readcan">
+              <div><span></span><span></span><span></span></div>
+              <img src="images/index/index_7.png" alt="">
+              <img src="images/index/index_35.png" alt="">
+            </div>
+            <div class="membership">
+              <p>会籍介绍</p>
+              <a href="./page/center/per_viplist.html" class="blue_points">加入我们</a>
+            </div>
+       </div>
+       <div class="recommend flex_row">
+           <div class="flex_com"><a href="./book-city/lendingrankings.html?index=0">
+               <img src="images/index/index_53.png" alt="">
+               <p>最新推荐</p>
+           </a></div>
+           <div class="flex_com"><a href="./book-city/lendingrankings.html?index=1">
+               <img src="images/index/index_55.png" alt="">
+               <p>最热推荐</p>
+           </a></div>
+           <div class="flex_com"><a href="./book-city/lendingrankings.html?index=2">
+               <img src="images/index/index_56.png" alt="">
+               <p>借阅排行</p>
+           </a></div>
+           <div class="flex_com"><a href="./book-city/lendingrankings.html?index=3">
+               <img src="images/index/index_57.png" alt="">
+               <p>猜你喜欢</p>
+           </a></div>
+       </div>
+   </div>
+   </div>
+   <!---->
+<!--最新推荐-->
+  <div class="baguo new_recommend">
+   <div class="newbook wrap">
+       <div class="first">
+           <img src="images/index/index_54.png" alt="">
+       </div>
+       <div class="rightmore">
+          <div>
+           <img src="images/index/index_46.png" alt="">
+           <a href="./book-city/lendingrankings.html?index=0">more</a>
+          </div> 
+       </div>
+       <div class="second flex_row"></div>
+   </div>
+  </div>
+  <!--最热推荐-->
+  <div class="baguo hot_recommend">
+   <div class="newbook wrap">
+       <div class="first">
+           <img src="images/index/index_58.png" alt="">
+       </div>
+       <div class="rightmore">
+          <div>
+           <img src="images/index/index_43.png" alt="">
+           <a href="./book-city/lendingrankings.html?index=1">more</a>
+          </div> 
+       </div>
+       <div class="second flex_row"></div>
+   </div>
+  </div>
+   <!--借阅排行-->
+   <div class="borrow"><div class="wrap">
+       <div class="first">
+           <img src="images/index/index_59.png" alt="">
+       </div>
+       <div class="rightmore"><div>
+         <a href="./book-city/lendingrankings.html?index=2">more</a>
+       </div></div>
+       <div class="add">
+       <div class="second flex_row"></div>
+       </div></div>
+   </div>
+   <!--猜你喜欢-->
+   <div class="whatulike"><div class="wrap">
+       <div class="first">
+           <img src="images/index/index_102.png" alt="">
+       </div>
+       <div class="rightmore"><div>
+           <a href="./book-city/lendingrankings.html?index=3">more</a>
+       </div></div>
+       <div class="add">
+        <div class="second flex_row"></div>
+       </div>
+   </div></div>
+   <!---->
+<!--&lt;!&ndash;底部导航栏-->
+  <footer>
+    <div class="wrap">
+      <div class="footerBox flex_row">
+        <div class="navBox">
+          <div class="icon"><a href="javascript:;"><img src="images/index/shuwucai.png" alt=""></a></div>
+           <a href="javascript:;">首页</a>
+        </div>
+        <div class="navBox">
+           <div class="icon"><a href="./book-city/index.html"><img src="images/index/shuchengxian.png" alt=""></a></div>
+           <a href="./book-city/index.html">书城</a>
+        </div>
+        <div class="logoBox">
+           <img src="images/index/index_51.png" alt="" class="_center">
+        </div>
+        <div class="navBox">
+           <div class="icon"><a href="./shopping.html"><img src="images/index/shubaoxian.png" alt=""></a></div>
+           <a href="./shopping.html">书包/购物车</a>
+        </div>
+        <div class="navBox">
+           <div class="icon"><a href="./ourselfs.html"><img src="images/index/wodexian.png" alt=""></a></div>
+           <a href="./ourselfs.html">我的</a>
+        </div>
+    </div></div>
+  </footer>
+  <!-- 标签弹窗 -->
+  <div class="tag">
+    <div class="content">
+        <div class="title">为了便于精确推送，请选择您和宝宝感兴趣的标签。</div>
+        <div class="tag-line"></div>
+        <div class="tag-save">
+          <img src="./images/index/tag_save.png" alt="" id="tagSave">
+        </div>
+    </div>
+  </div>
+</div>
+</body>
+  <!--js脚本--> 
+  <script src="./js/swiper.jquery.min.js"></script>
+  <script src="./js/fastclick.js"></script>
+  <script src="./js/md5.js"></script>
+  <!-- <script src="http://api.map.baidu.com/api?v=2.0&ak=QPl96LbZYZcXv9kqNkse93Glb6nLwxHH"></script>
+  <script src="./js/location.js"></script> -->
+  <script src="./js/paea_home.js"></script>
+  <!-- 腾讯统计 -->
+  <script>
+    var _mtac = {"performanceMonitor":1,"senseQuery":1};
+    (function() {
+      var mta = document.createElement("script");
+      mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+      mta.setAttribute("name", "MTAH5");
+      mta.setAttribute("sid", "500624689");
+      mta.setAttribute("cid", "500624690");
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  </script> 
+</html>

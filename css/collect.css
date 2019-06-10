@@ -1,0 +1,126 @@
+.body{
+    /*position: relative;*/
+}
+
+.body {
+    background-image: url('../images/index/order-bg.png')!important;
+    background-size: cover;
+}
+.newbook .second .flex_com a{display: block;width: 100%;}
+.newbook .second div p{white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+/*收藏*/
+.newbook{
+    width: 90%;
+    height: 100%;
+    /* position: relative; */
+    transform: translateX(5%);
+    -webkit-transform: translateX(5%);
+    -moz-transform: translateX(5%);
+    -ms-transform: translateX(5%);
+}
+.newbook .second{
+    width:100%;
+    flex-wrap:  wrap;
+    margin-bottom: .2rem;
+}
+.newbook .second .flex_com{
+    width: 32.29%;
+    background:#fff;
+    border-radius: 10px;
+    /* flex-wrap: wrap!important; */
+    margin: 0.1rem 0 0 0.03rem;
+    position:  relative;
+    padding:.1rem .04rem;
+    align-items: center;
+    text-align: center;
+}
+.newbook .second.shake{margin-top: .1rem;-webkit-transition: all .4s;transition: all .4s;}
+.newbook .second.shake .flex_com{animation: shake .25s linear infinite forwards;-webkit-animation: shake .25s linear infinite forwards;margin-top: .2rem;}
+.newbook .second.shake .flex_com ._delete{display: block;}
+.newbook .second div img.book{
+    width: 100%;
+    border-radius: .05rem;
+}
+
+.newbook .second div p:first-of-type {
+    margin: 0.05rem 0;
+}
+.newbook .second div p{
+    text-align: center;
+    color: #0b3e9e;
+    font-size: 0.12rem;
+    line-height: 1;
+}
+.eidter-btn{
+    width: 0.51rem;
+    height: 0.51rem;
+    position: fixed;
+    bottom: 0.15rem;
+    right: 0.12rem;
+}
+.eidter-btn>img{
+    width: 0.51rem;
+    height: 0.51rem;
+}
+/*删除符号*/
+._delete{
+    position: absolute;
+    width: 100%;
+    height: 0.25rem;
+    top: 0;
+    left: 0;
+    text-align: center;
+    display: none;
+}
+._delete>img{
+    width: 0.23rem;
+    height: 0.23rem;
+    margin-top: -.28rem;
+}
+/*完成按钮*/
+.complete-btn{
+    width: 0.51rem;
+    height: 0.51rem;
+    position: fixed;
+    bottom: 0.15rem;
+    right: 0.12rem;
+    /* z-index: -11; */
+    display:  none;
+}
+.complete-btn>img{
+    width: 0.51rem;
+    height: 0.51rem;
+}
+.not-wish{padding:.5rem 0;background: #fff;text-align: center;font-size: .12rem;line-height: 1.5;margin-top: .3rem;border-radius:.05rem;display: none;}
+.not-wish a{display: block;color:#ff6c00;}
+.loading{padding-bottom: .2rem;text-align: center;}
+@keyframes shake{
+  from{transform:rotate(0deg);}
+  33.33%{transform:rotate(1deg);}
+  66.66%{transform:rotate(0);}
+  to{transform:rotate(-1deg);}
+}
+@-webkit-keyframes shake{
+  from{-webkit-transform:rotate(0deg);}
+  33.33%{-webkit-transform:rotate(1deg);}
+  66.66%{-webkit-transform:rotate(0);}
+  to{-webkit-transform:rotate(-1deg);}
+}
+@-moz-keyframes shake{
+  from{transform:rotate(0deg);}
+  33.33%{transform:rotate(1deg);}
+  66.66%{transform:rotate(0);}
+  to{transform:rotate(-1deg);}
+}
+@-ms-keyframes shake{
+  from{-ms-transform:rotate(0deg);}
+  33.33%{-ms-transform:rotate(1deg);}
+  66.66%{-ms-transform:rotate(0);}
+  to{-ms-transform:rotate(-1deg);}
+}
+@-o-keyframes shake{
+  from{transform:rotate(0deg);}
+  33.33%{transform:rotate(1deg);}
+  66.66%{transform:rotate(0);}
+  to{transform:rotate(-1deg);}
+}

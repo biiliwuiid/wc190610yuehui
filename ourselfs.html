@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>悦绘亲子图书馆</title>
+    <link href="images/login/logo.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/ourselfs.css">
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/fitremtaobao2.js"></script>
+    <script src="./js/vip_isBeOverdue.js"></script>
+</head>
+<body>
+<div class="body body_my">
+<!-- 联系客服弹窗 -->
+<div class="customer-service">
+    <div class="content">
+        <img src="./images/ourselfs/close.png" alt="" class="close" id="customer-close">
+        <div class="title">
+            <span>长按扫描二维码添加客服</span>
+        </div>
+        <div>
+            <img src="" alt="" id="ewm">
+        </div>
+    </div>
+</div>
+<!--用户信息-->
+<div class="userinfo">
+    <!--用户头像-->
+    <div class="avatar"><a href="./page/my/my.html">
+        <div class="avatar-man">
+            <img id="userAvatar" src="images/ourselfs/mine_31.png" alt="">
+        </div>
+        <div class="userlick flex_com">
+            <span id="userName">悦绘欢迎您~</span>
+            <div class="shutong">查看个人信息</div>
+        </div>
+    </div>
+<!--     <div class="to-be-vip flex_row">
+    <i></i>
+    <span>加入会员</span>
+</div> -->
+</a></div>
+<!---->
+<!--全部订单-->
+<div class="all-orders flex_com wrap">
+    <!--流程-->
+    <div class="all-orders-intro">
+        <div class="all-orders-cen flex_row" >
+            <div class="th1"><a href="./order-status.html?index=0">
+                <i></i>
+                <span class="to-be-pay">待签收</span>
+                <p class="digtal">1</p>
+            </a></div>
+            <div class="th2"><a href="./order-status.html?index=1">
+                <i></i>
+                <span>待归还</span>
+                <p class="digtal">0</p>
+            </a></div>
+            <div class="th3"><a href="./order-status.html?index=2">
+                <i></i>
+                <span>已归还</span>
+                <p class="digtal">0</p>
+            </a></div>
+            <div class="th4"><a href="./order-status.html?index=3">
+                <i></i>
+                <span>历史借阅</span>
+                <p class="digtal">0</p>
+            </a></div>
+            <div class="th5"><a href="./coupon.html">
+                <i></i>
+                <span>优惠券</span>
+                <p class="digtal">0</p>
+            </a></div>
+        </div>
+    </div>
+</div>
+
+<!--地址。优惠券。收藏-->
+<div class="user-add wrap">
+    <div class="vip">
+        <div>我的会员</div>
+        <div class="vip-kind">
+          <div class="vip-kind_box">
+            <div><span id="vip_grade">小书童</span></div>
+            <div>
+                <a href="./page/center/per_viplist.html">会员中心</a>
+            </div>
+          </div>  
+        </div>
+        <div class="vip-n"><a href="./page/center/per_viplist.html">
+            <div>
+                <b>你还不是会员</b>
+                <span id="goUserCenter">会员中心</span>
+            </div>
+            <div>加入悦绘会员，享受免费借阅、优惠购书、以及更多优惠！</div>
+        </a></div>
+    </div>
+    <div class="invate">
+        <div>邀请有奖</div>
+        <div class="invate-rule">
+            <div>邀请好友，可立即获得XX代金券/优惠券</div>
+            <div>分享朋友圈，获得XX优惠</div>
+        </div>
+    </div>
+    <ul>
+      <li class="wish"><a href="./collect.html"><span>心愿单</span></a></li>    
+      <li class="proposal"><a href="./page/center/per_proposal.html"><span>投诉建议</span></a></li>    
+      <li class="contact" id="complaints"><span>联系客服</span></li>    
+    </ul>
+</div>
+<!---->
+<!--&lt;!&ndash;底部导航栏-->
+<footer>
+    <div class="wrap">
+      <div class="footerBox flex_row">
+        <div class="navBox">
+          <div class="icon"><a href="./index.html"><img src="images/index/shuwuxian.png" alt=""></a></div>
+           <a href="./index.html">首页</a>
+        </div>
+        <div class="navBox">
+           <div class="icon"><a href="./book-city/index.html"><img src="images/index/shuchengxian.png" alt=""></a></div>
+           <a href="./book-city/index.html">书城</a>
+        </div>
+        <div class="logoBox">
+           <img src="images/index/index_51.png" alt="" class="_center">
+        </div>
+        <div class="navBox">
+           <div class="icon"><a href="./shopping.html"><img src="images/index/shubaoxian.png" alt=""></a></div>
+           <a href="./shopping.html">书包/购物车</a>
+        </div>
+        <div class="navBox">
+           <div class="icon"><a href="javascript:;"><img src="images/index/wodecai.png" alt=""></a></div>
+           <a href="javascript:;">我的</a>
+        </div>
+    </div></div>
+  </footer>
+</div>
+<!---->
+</body>
+  <!--js脚本-->
+  <script src="./js/fastclick.js"></script>
+  <script src="./js/md5.js"></script>
+  <script src="./js/paea_my.js"></script>
+  <!-- 腾讯统计 -->
+  <script>
+    var _mtac = {"performanceMonitor":1,"senseQuery":1};
+    (function() {
+      var mta = document.createElement("script");
+      mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+      mta.setAttribute("name", "MTAH5");
+      mta.setAttribute("sid", "500624689");
+      mta.setAttribute("cid", "500624690");
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  </script> 
+</html>

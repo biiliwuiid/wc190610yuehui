@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>悦绘亲子图书馆</title>
+    <link href="../../images/login/logo.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/LArea/LArea.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/default.css" />
+    <script src="../../js/jquery-3.3.1.js"></script>
+    <script src="../../js/fitremtaobao.js"></script>
+    <script src="../../js/vip_isBeOverdue.js"></script>
+</head>
+<body>
+  <div class="body">
+    <div class="personal">
+      <div class="_my my_editaddress_box">
+        <div class="wrap">
+          <div class="my_editaddressBox">
+            <div class="consignee clearfix">
+              <h4>收货人</h4>
+              <div class="consignee_input">
+                <!-- <input type="text" maxlength="6" onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" /> -->
+                <input type="text" />
+              </div>
+            </div>
+            <div class="phone clearfix">
+              <h4>联系电话</h4>
+              <div class="phone_input">
+                <input type="number" oninput="if(value.length>11){value=value.slice(0,11)}"/>
+              </div>
+            </div>
+            <div class="region clearfix">
+              <h4>所在地区</h4>
+              <!-- <div class="region_select fr" id="region">请选择</div> -->
+              <div class="region_select fr">浙江省,宁波市,海曙区</div>
+            </div>
+            <div class="street clearfix">
+              <h4>详细地址</h4>
+              <!-- <div class="street_select fr">请选择</div> -->
+            </div>
+            <div class="detailed_address clearfix">
+              <textarea id="detailed_address" placeholder="请填写详细地址，不少于5个字"></textarea>
+            </div>
+          </div>  
+        </div>
+        <button id="submit_address" class="button_260-50">保存</button>
+      </div>     
+    </div>  
+  </div>
+  <!--js脚本-->
+  <script src="../../js/fastclick.js"></script>    
+  <script src="../../js/LArea/LAreaData1.js"></script>    
+  <script src="../../js/LArea/LAreaData2.js"></script>    
+  <script src="../../js/LArea/LArea.js"></script>  
+  <script src="../../js/md5.js"></script>  
+  <script src="../../js/paea_my.js"></script>   
+  <!-- 腾讯统计 -->
+  <script>
+    var _mtac = {"performanceMonitor":1,"senseQuery":1};
+    (function() {
+      var mta = document.createElement("script");
+      mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+      mta.setAttribute("name", "MTAH5");
+      mta.setAttribute("sid", "500624689");
+      mta.setAttribute("cid", "500624690");
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  </script> 
+</body>
+</html>

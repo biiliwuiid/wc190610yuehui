@@ -1,0 +1,236 @@
+<!-- 订单模板 -->
+<script id="tem_order" type="text/html">
+    {{each list item index}}
+    <div class="to-be-paid flex_com reservation" id="{{'order' + item.order_no}}">
+        <div class="top-nav flex_row">
+            <div class="top-nav-left flex_row" style="">
+                <span>订单编号</span>
+                <span>{{item.order_no}}</span>
+            </div>
+            {{if item.book_status == '2'}} 
+              {{if item.run_type == '1'}}
+              <span data-express="TC,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{else if item.run_type == '2'}}
+              <!-- <span data-express="GR,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span> -->
+              {{else if item.run_type == '3'}}
+              <span data-express="SF,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{else if item.run_type == '4'}}
+              <span data-express="STO,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{else if item.run_type == '5'}}
+              <span data-express="YTO,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{else if item.run_type == '6'}}
+              <span data-express="ZTO,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{else if item.run_type == '7'}}
+              <span data-express="YD,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{else if item.run_type == '8'}}
+              <span data-express="BTWL,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{/if}}
+            {{else item.book_status == '7'}}
+              {{if item.return_type == '1'}}
+              <span data-express="TC,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{else if item.return_type == '2'}}
+              <!-- <span data-express="GR,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span> -->
+              {{else if item.return_type == '3'}}
+              <span data-express="SF,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{else if item.return_type == '4'}}
+              <span data-express="STO,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{else if item.return_type == '5'}}
+              <span data-express="YTO,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{else if item.return_type == '6'}}
+              <span data-express="ZTO,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{else if item.return_type == '7'}}
+              <span data-express="YD,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{else if item.return_type == '8'}}
+              <span data-express="BTWL,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+              {{/if}}
+            {{/if}}
+        </div>
+        <!--商品-->
+        {{each item[0] x y}}
+        <div class="top-nav-hen flex_row">
+            <div class="flex_row">
+                <div class="product-image">
+                    <img src="{{x.book_pic}}" alt="">
+                </div>
+                <div class="product-intro ">
+                    <span>《{{x.book_name}}》</span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        <div class="infomation" id="{{'infomation' + item.order_id}}">
+            <div class="flex_row set-time">
+                <div>取件时间</div>
+                <div id="time-back">选择取件时间<img src="./images/ourselfs/time_next.png" alt=""></div>
+            </div>
+            <div class="flex_row details">
+                <img src="./images/satchel/address.png" alt="">
+                <div class="flex_com addresses" >
+                    <div class="flex_row">
+                        <div id="{{'people' + item.order_id}}">
+                        </div>
+                        <div id="{{'phone' + item.order_id}}"></div>
+                    </div>
+                    <div id="{{'address' + item.order_id}}"></div>
+                </div>
+            </div>
+            <div class="set-address">
+                <span>您还没有设置默认地址</span><a href="./page/my/my_more.html">去设置>></a>
+            </div>
+        </div>
+        <!--查看物流-->
+        <div class="_check">
+            {{if type == '2'}}
+            {{if item.book_status == '2'}}
+            <span id="wait-sure" data-order-no="{{item.order_no}}" data-order-id="{{item[0][0].order_id}}" data-parent-id="{{'order' + item.order_no}}">确认签收</span>
+           {{else if item.book_status == '1'}}
+           <span class="done">待发货</span>
+           {{/if}}
+            {{else if type == '4'}}
+            {{if item.book_status == '3'}}
+            <span id="set-back" data-order-no="{{item.order_no}}" data-order-id="{{item[0][0].order_id}}" data-parent-id="{{'order' + item.order_no}}">归还</span>
+            <span data-order-id="{{item[0][0].order_id}}" data-parent-id="{{'order' + item.order_no}}" class="cancel-order" id="cancel-back">取消</span>
+            <span data-order-id="{{item[0][0].order_id}}" data-parent-id="{{'order' + item.order_no}}" data-order-no="{{item.order_no}}" class="cancel-order" id="sure-back">确认预约</span>
+            {{else if item.book_status == '4'}} 
+            <span class="done">归还中</span>
+            {{/if}}
+            {{else if type == '5'}}
+            {{if item.book_status == '5'}}
+            <span id="wait-sure" data-order-no="{{item.order_no}}" data-order-id="{{item[0][0].order_id}}" data-parent-id="{{'order' + item.order_no}}" class="done">已归还</span>
+            {{else}} 
+            <span class="done">归还中</span>
+            {{/if}}
+            {{/if}}
+        </div>
+    </div>
+    {{/each}}
+  </script>  
+
+  <!-- 已购买 -->
+<script id="tem_buy" type="text/html">
+    {{each list item index}}
+    {{if !(item.is_line_order == 1 && item.order_status == 1)}}
+    <div class="to-be-paid flex_com"> 
+        <div class="top-nav flex_row">
+            <div class="top-nav-left flex_row" style="">
+                <span>订单编号</span>
+                <span >{{item.order_no}}</span>
+            </div>
+            {{if item.order_status != '2' && !(item.is_line_order == 2 && item.order_status == 1)}}
+            {{if item.run_type == '1'}}
+            <span data-express="TC,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+            {{else if item.run_type == '2'}}
+            <!-- <span data-express="GR,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span> -->
+            {{else if item.run_type == '3'}}
+            <span data-express="SF,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+            {{else if item.run_type == '4'}}
+            <span data-express="STO,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+            {{else if item.run_type == '5'}}
+            <span data-express="YTO,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+            {{else if item.run_type == '6'}}
+            <span data-express="ZTO,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+            {{else if item.run_type == '7'}}
+            <span data-express="YD,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+            {{else if item.run_type == '8'}}
+            <span data-express="BTWL,{{item.waybill_no}}">查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+            {{else}}
+            <span>查看物流<img src="./images/ourselfs/next.png" alt=""></span>
+            {{/if}}
+            {{/if}}
+        </div>
+        <!--商品-->
+        {{each item[0] x y}}
+        <div class="top-nav-hen flex_row">
+            <div class="flex_row">
+                <div class="product-image">
+                    <img src="{{x.book_pic}}" alt="">
+                </div>
+                <div class="product-intro ">
+                    <span>《{{x.book_name}}》</span>
+                </div>
+            </div>
+            <div class="flex_com">
+                <span>￥{{x.book_price}}</span>
+                <span>×{{x.book_number}}</span>
+            </div>
+        </div>
+        {{/each}}
+        <!--按钮--> 
+        <div class="_check buy-check">
+            {{if (item.is_line_order == 2 && item.order_status == 1)}}
+            <a href="./crat-order.html?order_id={{item.order_id}}" class="payment">去支付</a>
+            {{else if item.order_status == '3'}}
+            <span id="buy-sure" data-order-no="{{item.order_no}}" data-order-id="{{item.order_id}}">确认收货</span>
+            {{else if item.order_status == '4'}}
+            {{if item[0][0].score}}
+            <span class="done">已评价</span>
+            {{else}}
+            <span class="evaluate" data-id="{{item.order_id}}">评价</span>
+            {{/if}}
+            {{else if item.order_status == '2'}}
+            <span class="done">待发货</span>
+            {{/if}}
+        </div>
+    </div>
+    {{/if}}
+    {{/each}}
+</script>
+
+<script id="tem_order_history" type="text/html">
+    {{each list item index}}
+    <div class="to-be-paid flex_com">
+        <div class="top-nav flex_row">
+            <div class="top-nav-left flex_row" style="">
+                <span>订单编号</span>
+                <span>{{item.order_no}}</span>
+            </div>
+        </div>
+        <!--商品-->
+        {{each item[0] x y}}
+        <div class="top-nav-hen flex_row" data-id= "{{x.book_id}}">
+            <div class="flex_row">
+              <div class="product-image">
+                  <img src="{{x.book_pic}}" alt="">
+              </div>
+               <div class="product-intro ">
+                  <span>《{{x.book_name}}》</span>
+               </div>
+               <div class="buy" data-id="{{x.book_id}}"> <a href="./book-city/product-details.html?id={{x.book_id}}">我要买</a></div>
+            </div>
+        </div>
+        {{/each}}
+        <!--查看物流-->
+        <div class="_check">
+            {{if item.is_score == 2}}
+            <span class="done" >已完成</span>
+            {{else}}
+            <span class="evaluate" data-json="{{item}}" data-id="{{item.order_id}}">评价</span>
+            {{/if}}
+        </div>
+    </div>
+    {{/each}}
+</script>
+<!-- 物流详情 -->
+<script id="logistics_list" type="text/html">
+  {{each list item index}}
+  <li class="{{item.status == 4 ? 'li_signIn' : (item.status == 0 ? 'li_start' : (item.status == 2 ? 'li_dispatch' : ''))}}">
+    <div class="time">
+      <span>{{item.date}}</span>{{item.times}}
+    </div>
+    <div class="text">
+      {{if item.status == 0}}
+      <span>已揽收</span>
+      {{else if item.status == 1}}
+      <span>运输中</span>
+      {{else if item.status == 2}}
+      <span>派件中</span>
+      {{else if item.status == 3}}
+      <span>已代收</span>
+      {{else if item.status == 4}}
+      <span>已签收</span>
+      {{/if}}
+      <p>{{item.content}}</p>
+    </div>
+  </li>
+  {{/each}}
+</script>

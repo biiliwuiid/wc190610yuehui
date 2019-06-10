@@ -1,0 +1,10 @@
+<!-- 模板：猜你喜欢 -->
+<script id="tem_guess" type="text/html">
+    {{each list as item}}
+    <div class="flex_com" data-id="{{item.id}}"><a href="./product-details.html?id={{item.id}}">
+        <div class="img"><img src="{{item.book_pic}}" alt="" class="guess-book"></div>
+        <p>{{item.book_name}}</p>
+    </a></div>
+    {{/each}}
+</script>  
+  

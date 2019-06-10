@@ -1,0 +1,165 @@
+.wrap{width: 90.625%;max-width: 640px;margin: 0 auto;}
+body{
+    width: 100%;
+    font-family:"[NotoSansHans]","微软雅黑","microsoft yahei","Arial",simsun;
+    margin: 0;
+    padding: 0;
+    font-size: 0.12rem;
+    color: #0b3e9e;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+}
+.body {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    background: #b2e1f3;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* padding-top: 0.12rem; */
+}
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置默认字体 */
+/*h1 { font-size: 18px; !* 18px / 12px = 1.5 *! }*/
+/*h2 { font-size: 16px; }*/
+/*h3 { font-size: 14px; }*/
+/*h4, h5, h6 { font-size: 100%; }*/
+
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+small { font-size: 0.12rem; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/* 重置列表元素 */
+ul, ol { list-style: none; }
+
+/* 重置文本格式元素 */
+a { text-decoration: none; }
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+.clear{ clear:both; height:0; font-size:0; overflow:hidden; line-height:0;}
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.clearfix:after { clear: both; }  
+.clearfix { zoom: 1; }
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+p{
+    margin: 0;
+}
+.flex_row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.flex_com {
+    display: flex;
+    flex-flow: column nowrap;
+}
+input{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 0.12rem;
+}
+.wrap{width: 90.625%; max-width: 640px; margin: 0 auto;}
+/*尾部*/
+footer {
+    position: fixed;
+    background: #fffbe5;
+    max-width: 640px;
+    width:  100%;
+    z-index: 111;
+    padding:.03rem 0 .04rem;
+    left:auto;
+    right:auto;
+    bottom:0rem;
+    border-radius: .05rem .05rem 0 0;
+}
+footer .footerBox{
+    justify-content: space-between;
+}
+footer>div>div{
+    /* width:0.3rem;
+    height: 0.32rem;
+    margin-left: 10px; */
+}
+footer>div>div>img{
+    width: 0.2rem;
+    height: 0.19rem;
+    margin-left: 0.01rem;
+}
+footer>div>div>span{
+    font-size: 0.11rem;
+}
+._center{
+    width:0.46rem;
+    height: 0.3rem;
+    margin-left: -10px;
+}
+footer .logoBox{display:flex;justify-content: center;align-items: center;}
+footer .navBox{width: .215rem;height: .34rem;text-align: center;position: relative;}
+footer .icon{height: .23rem;display:flex;justify-content:center;align-items: center;}
+footer .navBox>a{display: block;font-size: .11rem;position: absolute;left:50%;-webkit-transform: translateX(-50%);-ms-transform: translateX(-50%);transform: translateX(-50%);bottom:0;white-space: nowrap;color:#0b3191;line-height: 1;}
+footer .navBox .icon a{display: block;color:#0b3191;height: 100%;}
+footer .navBox:first-child img{width: .205rem;height: .21rem;}
+footer .navBox:nth-child(2) img{width: .215rem;height: .215rem;}
+footer .navBox:nth-child(4) img{width: .22rem;height: .21rem;}
+footer .navBox:last-child img{width: .185rem;height: .215rem;}
+/*兼容购物车底部导航*/
+.body_shopping footer{padding:.06rem 0 .08rem;max-width: 100%;border-radius: .1rem .1rem 0 0;}
+.body_shopping footer .navBox{width: .43rem;height: .68rem;}
+.body_shopping footer .icon{height: .46rem;}
+.body_shopping footer .navBox>a{font-size: .22rem;}
+.body_shopping footer .navBox:first-child img{width: .41rem;height: .42rem;}
+.body_shopping footer .navBox:nth-child(2) img{width: .43rem;height: .43rem;}
+.body_shopping footer .navBox:nth-child(4) img{width: .44rem;height: .42rem;}
+.body_shopping footer .navBox:last-child img{width: .37rem;height: .43rem;}
+.body_shopping footer ._center{width: .92rem;height: .6rem;}
+/*弹框*/
+#showModal{position: fixed;left:50%;-webkit-transform: translateX(-50%);-ms-transform: translateX(-50%);transform: translateX(-50%);top:0;width: 100%;max-width: 640px;height: 100%;z-index: 100000;text-align: center;color:#fff;}
+.showModalBox{width: 1.25rem;padding:.2rem;background: rgba(0,0,0,.8);position: relative;margin:0 auto;top:50%;-webkit-transform: translateY(-50%);-ms-transform: translateY(-50%);transform: translateY(-50%);}
+.showModalBox span{position: absolute;top:0;right:0;font-size: .2rem;cursor: pointer;padding:0 .025rem;}
+.showModalBox i{display: block;width: .35rem;height: .35rem;margin:0 auto;background: url(../images/login/icon_03.png) no-repeat;background-size: 100%;}
+.showModalBox p{padding-top: .075rem;font-size:.13rem;line-height: .17rem;}
+#showModal .showModal_box{width:auto;background: rgba(0,0,0,.8);padding:.15rem .2rem;position: absolute;top:50%;left:50%;-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);font-size:.13rem;border-radius: .05rem;}
+#confirmModal{position: fixed;width: 100%;height: 100%;left:0;top:0;background: rgba(0,0,0,.2);z-index: 100000;text-align: center;}
+#confirmModal .confirmModalBox{width: 2.1rem;background: rgba(0,0,0,.85);color:#fff;position: absolute;top:50%;left:50%;-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);border-radius: .05rem;}
+#confirmModal h3{font-size: .16rem;padding-top: .175rem;margin: 0;}
+#confirmModal p{font-size: .12rem;padding:.15rem .2rem;line-height: 1.5;margin: 0}
+#confirmModal .button{font-size: 0;border-top: 1px solid #ccc;}
+#confirmModal .button div{display: inline-block;width: 50%;height: .35rem;line-height: .35rem;font-size: .16rem;vertical-align: top;-moz-box-sizing: border-box;box-sizing: border-box;}
+#confirmModal .button div:last-child{border-left: 1px solid #ccc;color: #ff6c00;}
+/*加载更多*/
+.scroll_load_more{text-align: center;padding:.075rem 0 .1rem;font-size: .12rem;color:#0b3e9e;}

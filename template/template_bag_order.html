@@ -1,0 +1,30 @@
+<script id="tem_bag_order" type="text/html">
+    {{each list as item}}
+    <div class="commodity-line">
+        <div class="commodity-img">
+            <img src="{{item.book_pic ? item.book_pic : './images/satchel/commodity.png'}}" alt="">
+        </div>
+        <div class="commodity-name">
+            {{item.book_name}}
+        </div>
+        <div class="commodity-subname">
+            {{item.author}}
+        </div>
+    </div>
+    {{/each}}
+</script>
+
+<script id="tem_order_adress" type="text/html">
+    {{each list as item}}
+        <div class="address-icon"></div>
+        <div class="user-name text-color">
+            <span>收件人:</span>
+            <span class="name">{{item.collect_name}}</span>
+            <span class="phone">{{item.collect_phone}}</span>
+        </div>
+        <div class="user-address text-color">
+            <span>收货地址:</span>
+            <span id="user-address">{{item.province}}{{item.city}}{{item.area}}{{item.address}}</span>
+        </div>
+    {{/each}}
+</script>

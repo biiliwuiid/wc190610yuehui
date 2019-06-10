@@ -1,0 +1,51 @@
+<!-- 模板：首页~~搜索列表 -->
+<script id="tem_search_list" type="text/html">
+  {{each list item index}}
+  <li><a href="../book-city/product-details.html?id={{item.id}}">{{item.book_name}}&nbsp;&nbsp;{{item.author}}</a></li>
+  {{/each}}
+</script> 
+<!-- 模板：广告轮播图 -->
+<script id="tem_home_banner" type="text/html">
+  {{each list item index}}
+  <div class="swiper-slide" data-id="{{item.id}}"><a href="{{item.url}}">
+    <img src="{{item.pic}}" />
+    <div class="banner_text"><p>{{@item.title}}</p></div>
+  </a></div>
+ {{/each}} 
+</script>   
+<script id="tem_first_tag" type="text/html">
+    {{each list as item index}}
+    <div class="kind-line" data-id="{{item.id}}">
+        <img src="{{item.cate_pic}}" alt="">
+        <div>{{item.name}}</div>
+    </div>
+    {{/each}}
+</script>
+<script id="tem_second_tag" type="text/html">
+    {{each list as item index}}
+    <span  data-id="{{item.id}}" id="{{item.id}}">{{item.name}}</span>
+    {{/each}}
+</script>
+<script id="tem_book" type="text/html">
+    {{each list as item index}}
+    <div>
+      <a href="./product-details.html?id={{item.id}}"><img src="{{item.book_pic}}" alt="" class="jumpxq" data-id="{{item.id}}"></a>
+            <p>{{item.book_name}}</p>
+            <!-- <span class="whatkin">{{item.book_type}}</span> -->
+            <div class="bottom-btn flex_row">
+
+            <div class="bottom-btn-net">
+                <i class="ba1 {{item.is_book_mark == 2 ? 'ba2' : ''}}" data-id="{{item.id}}"></i>
+            </div>
+            <div class="whatsbgwc flex_row">
+                    {{if item.is_borrow === 1}}
+                    <img src="../images/bookcity/shubao.png" alt="" data-id="{{item.id}}" class="add-to-bag">
+                    {{/if}}
+                    {{if item.is_pay === 1}}
+                    <img src="../images/bookcity/gwc23.png" alt="" data-id="{{item.id}}" class="add-to-cart">
+                    {{/if}}
+                </div>
+            </div>
+    </div>
+    {{/each}}
+</script>

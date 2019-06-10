@@ -1,0 +1,70 @@
+    .magic-checkbox {
+    position: absolute;
+    display: none; }
+  
+  .magic-checkbox[disabled] {
+    cursor: not-allowed; }
+  
+  .magic-checkbox + label {
+    position: relative;
+    display: block;
+    padding-left: 0.4rem;
+    cursor: pointer;
+    vertical-align: middle; }
+    .magic-checkbox + label:before {
+      /* position: absolute;
+       top: 0.02rem;
+       left: 0;
+       display: inline-block;
+       width: 0.3rem;
+       height: 0.3rem;
+       content: '';
+       border: 0.01rem solid #3e97eb; */ }
+    .magic-checkbox + label:after {
+      position: absolute;
+      display: none;
+      content: ''; }
+  
+  .magic-checkbox[disabled] + label {
+    cursor: not-allowed;
+    color: #e4e4e4; }
+    .magic-checkbox[disabled] + label:hover,
+    .magic-checkbox[disabled] + label:before,
+    .magic-checkbox[disabled] + label:after {
+      cursor: not-allowed; }
+    .magic-checkbox[disabled] + label:hover:before {
+      border: 0.1rem solid #e4e4e4;
+      animation-name: none; }
+    .magic-checkbox[disabled] + label:before {
+      border-color: #e4e4e4; }
+  
+  .magic-checkbox:checked + label:before {
+    animation-name: none; }
+  
+  .magic-checkbox:checked + label:after {
+    display: block; }
+  
+  .magic-checkbox + label:before {
+    border-radius: 0.2rem; }
+  
+  .magic-checkbox + label:after {
+    /* top: 0.06rem;
+    left: 0.1rem;
+    box-sizing: border-box;
+    width: 0.08rem;
+    height: 0.16rem;
+    transform: rotate(45deg);
+    border-width: 0.02rem;
+    border-style: solid;
+    border-color: #fff;
+    border-top: 0;
+    border-left: 0; */}
+  
+  .magic-checkbox:checked + label:before {
+    border: #3e97eb;
+    background: #3e97eb; }
+  
+  .magic-checkbox:checked[disabled] + label:before {
+    border: #c9e2f9;
+    background: #c9e2f9; }
+  

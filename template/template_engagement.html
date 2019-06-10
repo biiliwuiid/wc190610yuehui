@@ -1,0 +1,75 @@
+<!-- 模板：本周课表列表 -->
+<script id="tem_engagement_list" type="text/html">
+  {{each list item index}}
+  <div class="subscribe flex_com">
+    <div class="teacher_box clearfix">
+      <div class="left">
+        <h4>故事会老师</h4>
+        <p>{{item.teacher}}</p>
+      </div>
+      <div class="right">
+        <img src="{{item.teacher_pic}}" alt="" />
+      </div>
+    </div>
+    <div class="story_box">
+      <div class="le-name">故事会《{{item.title}}》</div>
+      <div class="xiangxi flex_row">
+        <div class="left">
+          <img src="{{item.book_pic}}" alt="">
+          <div class="jt-time flex_com">
+            <div class="jt-grd flex_row">
+              <span>时间</span> 
+              <span class="time-hour">{{item.start}}-{{item.end}}</span>
+            </div>
+            <div class="jt-seat flex_row">
+              <span>剩余座位</span>
+              <span class="jt-per" r>{{item.num < 0 || item.is_open == 2 ? 0 : item.num}}人</span>
+            </div>
+          </div>
+        </div>
+        {{if item.num > 0 && item.is_appointment == 0 && item.is_open == 1}}
+        <a href="./information.html?year={{item.year}}&month={{item.month}}&day={{item.day}}&week={{item.week_num}}&start={{item.start}}&end={{item.end}}&id={{item.id}}" class="le-sub">预约</a>
+        {{else if item.num == -1 && item.is_open == 1}}
+        <a href="javascript:;" class="le-sub disabled">已结束</a> 
+        {{else if item.is_appointment == 1}}
+        <a href="javascript:;" class="le-sub isOk">已预约</a>
+        {{else if item.num == 0 || item.is_open == 2}}
+        <a href="javascript:;" class="le-sub disabled">已约满</a>
+        {{/if}}
+      </div>
+    </div>
+    <div class="ageGroup">适合年龄段：{{item.fit_yeay_start}}~{{item.fit_yeay_end}}周岁</div>
+  </div>
+  {{/each}}
+</script>
+<script id="teacher_list" type="text/html">
+  {{each list item index}}
+    <li>
+      <div class="left">
+        <h4>故事会老师</h4>
+        <p>{{item.name}}</p>
+      </div>
+      <div class="right">
+        <img src="{{item.pic}}" alt="" />
+      </div>
+    </li>
+  {{/each}}
+</script>
+<!-- 模板：日历列表 -->
+<script id="tem_yyrules_day" type="text/html">
+  {{each list item index}}
+  <div class="sy-seat flex_row">
+    <span>{{item.start}}-{{item.end}}</span>
+    <span>剩余座位{{item.num < 0 || item.is_open == 2 ? 0 : item.num}}</span>
+    {{if item.num > 0 && item.is_appointment == 0 && item.is_open == 1}}
+    <a href="./information.html?year={{item.year}}&month={{item.month}}&day={{item.day}}&week={{item.week_num}}&start={{item.start}}&end={{item.end}}&id=0" class="le-sub">预约</a>
+    {{else if item.num == -1 && item.is_open == 1}}
+    <a href="javascript:;" class="le-sub disabled">已结束</a> 
+    {{else if item.is_appointment == 1}}
+    <a href="javascript:;" class="le-sub isOk">已预约</a> 
+    {{else if (item.num == 0 && item.is_appointment == 0) || item.is_open == 2}}
+    <a href="javascript:;" class="le-sub disabled">已约满</a> 
+    {{/if}}
+  </div>
+  {{/each}}    
+</script>

@@ -1,0 +1,49 @@
+<!-- 模板：到店体验券和优惠券 -->
+<script id="tem_voucher" type="text/html">
+  {{each list item index}}
+  {{if item.range == 1}}
+  <div class="to-be-paid flex_com voucher_discount">
+    <div class="top-nav">
+      <div class="top-nav-left flex_row" style="">
+        <i></i><span style="">悦绘亲子图书馆</span>
+      </div>
+    </div>
+  <!--商品-->
+  <div class="coupon_center discount_center">
+    <div class="coupon_center_box">
+      <div class="top">
+        <h3>购书满减券</h3>    
+      </div>
+      <div class="bottom">
+        <p><span>￥</span>{{item.reduce}}<strong>满{{item.satisfy}}可用</strong></p>
+        <a href="./book-city/index.html">{{item.isDisable == 1 ? '已经使用' : '立即使用'}}</a>      
+      </div>
+    </div>
+  </div>
+  <div class="_total flex_com">
+    <p>有效期：{{item.addtime}} - {{item.endtime}}</p>
+  </div>
+  </div>
+  {{else item.range == 2}}
+  <div class="to-be-paid flex_com voucher_experience" data-id="{{item.id}}">
+    <div class="top-nav">
+      <div class="top-nav-left flex_row" style="">
+        <i></i><span style="">悦绘亲子图书馆</span>
+      </div>
+    </div>
+    <!--商品-->
+    <div class="coupon_center">
+      <div class="coupon_center_box">
+        <div class="top">
+          <h3>线下到店<span>体验券</span></h3>    
+          <a href="./engagement/stores.html">{{item.isDisable == 1 ? '已经使用' : '立即使用'}}</a>
+        </div>
+        <p>永久有效</p>
+      </div>
+    </div>
+    <!--合计-->
+    <div class="_total"></div>
+  </div>
+  {{/if}}
+  {{/each}}
+</script>  

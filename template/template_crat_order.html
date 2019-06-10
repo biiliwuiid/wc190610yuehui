@@ -1,0 +1,42 @@
+<!-- 书籍商品列表 -->
+<script id="tem_crat_order" type="text/html">
+    {{each list as item}}
+    <div class="commodity-line" data-id="{{item.id}}">
+        <div class="commodity-img">
+            <img src="{{item.book_pic ? item.book_pic : './images/satchel/commodity.png'}}" alt="">
+        </div>
+        <div class="commodity-name">
+            {{item.book_name}}
+        </div>
+        <div class="commodity-subname">
+            {{item.author}}
+        </div>
+        <div class="commodity-details">
+            <span class="commodity-price" data-originalPrice="{{item.price}}" data-num="{{item.num}}">
+                ￥{{item.new_price}}
+            </span>
+            <span class="commodity-count">
+                x{{item.num}}
+            </span>
+            <span style="display:none;" class="commodity-code">
+                {{item.bar_code}}
+            </span>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<!-- 满减券列表 -->
+<script type="text/html" id="tem_coupon_list">
+  {{each list item index}}     
+    <li data-id="{{item.id}}">
+      <div class="left">
+        <h4>￥<span>{{item.reduce}}</span></h4>
+        <h5>满{{item.satisfy}}可用</h5>    
+      </div>    
+      <div class="right">
+        <h4>{{item.coiling_title || '购书满减券'}}</h4>
+        <p>有效期：<span>{{item.addtime}} - {{item.endtime}}</span></p>    
+      </div>
+  </li> 
+  {{/each}}
+</script>

@@ -1,0 +1,55 @@
+<!-- 模板：店铺列表 -->
+<script id="tem_shop_list" type="text/html">
+  {{each list item index}}
+  <div class="dp-intro" data-id="{{item.id}}">
+    <p class="dpname">{{item.name}}</p>
+    <!--店铺图片-->
+    <div class="dp-pic">       
+        <img src="{{item.pic}}" alt="">
+    </div>
+    <ul>
+      <li>地址：{{item.address}}</li>
+      <li>电话：{{item.phone}}</li>
+      <li>营业时间：周一至周日{{item.time_start}}-{{item.time_end}}</li>
+    </ul>
+    </div>
+  {{/each}}
+</script>  
+<!-- 模板：会员活动列表 -->
+<script id="tem_activity_list" type="text/html">
+  {{each list item index}}
+  <li>
+    <div class="date">
+      <p>{{item.year}}-{{item.month < 10 ? '0' + item.month : item.month}}-{{item.day < 10 ? '0' + item.day : item.day}}</p>
+      <span>星期{{item.week_num}}</span>
+      <h4>{{item.start}}~{{item.end}}</h4>    
+    </div>
+    <div class="dp-intro">
+      <div class="container">
+        <p class="dpname">{{item.title}}</p>
+        <!--店铺图片-->
+        <div class="dp-pic">
+          <img src="{{item.pic}}" alt="">
+        </div>
+        <ul class="information">
+          <li class="text">活动介绍：{{item.content}}</li>
+          <li class="address">地址：{{item.address}}</li>
+          <li class="phone">电话：{{item.phone}}</li>
+          <li class="more"><a href="{{item.url}}">活动详情&gt;&gt;</a></li>
+        </ul>
+      <!--按钮-->
+      <div class="button">
+        {{if item.num == -1}}
+        <a href="javascript:;" class="disabled">已结束</a>
+        {{else if item.num > 0 && item.is_appointment == 0}}
+        <a href="./information_activity.html?year={{item.year}}&month={{item.month}}&day={{item.day}}&week={{item.week_num}}&start={{item.start}}&end={{item.end}}&name={{item.title}}&price={{item.money}}">立即预约</a>   
+        {{else if item.is_appointment == 1}}
+        <a href="javascript:;" class="isOk">已预约</a>
+        {{else if item.num == 0}}
+        <a href="javascript:;" class="disabled">已约满</a> 
+        {{/if}}
+      </div>
+    </div>
+  </li>
+  {{/each}}
+</script> 

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>悦绘亲子图书馆</title>
+    <link href="images/login/logo.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" href="./css/satchel.css">
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/template.js"></script>
+    <script src="./js/fitremtaobao.js"></script>
+    <script src="./js/vip_isBeOverdue.js"></script>
+</head>
+<body>
+    <div class="order-details wrap">
+        <div class="user-info user-info-crat"> 
+          <div class="addressBox">
+            <div class="address-icon"></div>
+            <div class="user-name text-color">
+                <span>收件人:</span>
+                <span class="name"></span>
+                <span class="phone"></span>
+            </div>
+            <div class="user-address text-color">
+                <span>收货地址:</span>
+                <span class="addressBox" id="user-address"></span> 
+            </div>
+          </div>
+          <div class="underLineBox">当前为线下订单，不支持物流配送，请到店自取</div>  
+        </div>
+        <div class="no-adress">
+              <div>暂无收货地址</div>
+            <div><a href="./page/my/my_address.html">去设置&gt;&gt;</a></div>
+            </div>
+        <div class="commodity-info">
+            <div id="crat-commodity"></div>
+            <div class="coupon text-color">
+                <span>优惠信息</span>
+                <span class="text-right" id="select_coupon">优惠券自动选择</span>
+            </div>
+            <div class="delivery text-color">
+                <span>配送方式</span>
+                <span class="text-right">物流配送</span>
+            </div>
+            <div class="invoice text-color">
+                <span>发票类型</span>
+                <span class="text-right invoice-kind" id="invoice-kind">不开发票</span>
+            </div>
+            <div class="pay text-color">
+                <span class="text-right satchel-flex">
+                    <img src="./images/satchel/wx.png" alt="">
+                    微信支付
+                </span>
+            </div>
+            <div class="message text-color">
+                <span>买家留言：</span>
+                <textarea placeholder="填写内容已和卖家协商确认" maxlength="50"></textarea>
+            </div>
+            <div class="total text-color">
+                <span class="text-right">
+                    共<span id="book-num">0</span>件商品
+                </span>
+            </div>
+        </div>
+        <div class="submit_box">
+          <div class="satchel-submit text-color wrap">
+            <span>合计金额：<span id="amount">￥0.00</span></span>
+            <img src="./images/satchel/crat-submit.png" alt="" id="place_order">
+          </div>
+        </div>
+    </div>
+    <!-- 发票选择弹框 -->
+    <div class="invoice-choose-mask">
+        <div class="invoice-choose">
+            <div class="name">
+                <span>发票</span>
+                <img src="./images/satchel/invoice-close.png" alt="" class="close-invoice-choose">
+            </div>
+            <div class="kind">
+                <div class="title">发票类型</div>
+                <div class="details">
+                    <div class="li active">普通发票</div>
+                    <!-- <div class="li">电子普通发票</div> -->
+                </div>
+            </div>
+            <div class="invoice">
+                <div class="title">发票抬头</div>
+                <div class="details">
+                    <div class="li active person">个人</div>
+                    <div class="li company">单位</div>
+                </div>
+                <div class="person-infomation">
+                    <input type="text" placeholder="请输入收票人手机号" maxlength="11">
+                </div>
+                <div class="company-infomation">
+                    <input type="text" placeholder="请填写公司名称" class="company">
+                    <input type="text" placeholder="请在此填写纳税人识别号" class="recognition">
+                </div>
+            </div>
+            <div class="content">
+                <div class="title">发票内容</div>
+                <div class="details">
+                    <div class="li none active">不开发票</div>
+                    <div class="li commodity">商品明细</div>
+                </div>
+            </div>
+            <div class="invoice-logo">
+                <img src="./images/satchel/invoice-logo.png" alt="">
+            </div>
+            <div class="invoice-submite">
+                <span id="invoice-submite">确定</span>
+            </div>
+        </div>
+    </div>
+    <!-- 优惠券选择弹框 --> 
+    <div class="coupon_select">
+      <div class="coupon_select_box">
+        <div class="coupon_selectBox wrap">
+          <div class="coupon_top">
+            <h3>优惠券</h3>
+            <div class="close"></div>
+            <ul class="coupon"></ul>
+          </div>
+          <div class="coupon_bottom">    
+            <div class="img_btns">
+              <img src="./images/satchel/loginimg_01.png" alt="" />    
+              <div class="btns">
+                <img src="./images/satchel/btn_determine.png" alt="" id="coupon_submit"/>    
+              </div> 
+            </div>
+          </div>
+        </div>  
+      </div>      
+    </div>
+    <!-- 支付成功弹框 -->
+    <div class="payment_success">
+      <div class="payment_success_box">
+        <div class="wrap">
+          <img src="./images/satchel/success.png" alt="" class="img1" />
+          <div class="btns">
+            <img src="./images/satchel/btn_close.png" alt="" />    
+          </div>
+        </div>
+      </div>  
+    </div>
+  <!--js脚本-->  
+  <script src="./js/fastclick.js"></script>   
+  <script src="./js/md5.js"></script>
+  <script src="./js/paea_crat_order.js"></script>
+  <!-- 腾讯统计 -->
+  <script>
+    var _mtac = {"performanceMonitor":1,"senseQuery":1};
+    (function() {
+      var mta = document.createElement("script");
+      mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+      mta.setAttribute("name", "MTAH5");
+      mta.setAttribute("sid", "500624689");
+      mta.setAttribute("cid", "500624690");
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  </script> 
+</body>
+</html>

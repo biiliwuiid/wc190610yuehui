@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>悦绘亲子图书馆</title>
+    <link href="images/login/logo.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/ourselfs.css"> 
+    <link rel="stylesheet" href="css/coupon.css">
+    <link rel="stylesheet" href="css/amazeui.css">
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/fitremtaobao2.js"></script>
+    <script src="./js/template.js"></script>
+    <script src="./js/vip_isBeOverdue.js"></script>
+</head>
+<body>
+<div class="body body_voucher"> 
+<!--选项卡-->
+<div class="am-tabs" data-am-tabs="{noSwipe: 1}" id="doc-tab-demo-1">
+    <ul class="am-tabs-nav am-nav am-nav-tabs" id="am-kinds">
+        <li class="am-active"><a href="javascript: void(0)">到店使用券</a></li>
+        <li><a href="javascript: void(0)">优惠券</a></li>
+        <li><a href="javascript: void(0)">使用记录</a></li>
+        <li><a href="javascript: void(0)">已过期</a></li>
+    </ul>
+
+    <div class="am-tabs-bd coupon-tab">
+        <!--到店使用券-->
+        <div class="am-tab-panel am-active voucher_one"></div>
+        <!--优惠券-->
+        <div class="am-tab-panel voucher_two"></div>
+        <!--使用记录-->
+        <div class="am-tab-panel voucher_three"></div>
+        <!--已过期-->
+        <div class="am-tab-panel voucher_four"></div>
+        <div class="scroll_load_more">加载中...</div>
+    </div>
+</div>
+</div>
+</body>
+  <!--js脚本-->  
+  <script src="./js/fastclick.js"></script>
+  <script src="./js/md5.js"></script>
+  <script src="./js/amazeui.js"></script>
+  <script src="./js/paea_center.js"></script>
+  <!-- 腾讯统计 -->
+  <script>
+    var _mtac = {"performanceMonitor":1,"senseQuery":1};
+    (function() {
+      var mta = document.createElement("script");
+      mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+      mta.setAttribute("name", "MTAH5");
+      mta.setAttribute("sid", "500624689");
+      mta.setAttribute("cid", "500624690");
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  </script>
+</html>

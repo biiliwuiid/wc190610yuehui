@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>悦绘亲子图书馆</title>
+    <link href="images/login/logo.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/font_icon.css" />
+    <link rel="stylesheet" href="css/amazeui.css">
+    <link rel="stylesheet" href="./css/KDNWidget.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/order-status.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/fontawesome-stars.css">
+    <script type="text/javascript" src="./js/fitremtaobao2.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery.barrating.min.js"></script>
+    <script src="./js/md5.js"></script>
+    <script src="./js/template.js"></script>
+    <script src="./js/vip_isBeOverdue.js"></script>
+</head>
+<body>
+<div class="body">
+    <!--归还弹窗-->
+    <div class="revert">
+          <div class="whitefixed flex_com">
+               <div class="flri flex_row">
+                   <div></div>
+                   <div></div>
+               </div>
+               <span>是否确认归还?</span>
+              <div class="anniu-btn flex_row">
+                  <button>确认</button>
+                  <button class="quxiao">取消</button>
+              </div>
+          </div>
+    </div>
+    <!-- 时间选择 -->
+    <div class="mf-picker" id="mf-picker">
+        <div class="mf-picker-panel">
+            <div class="mf-picker-choose">
+                <h1 class="mf-picker-title">选择时间</h1>
+                <img src="./images/ourselfs/time-close.png" alt="" class="cancel">
+            </div>
+            <div class="mf-picker-content">
+                <div class="mask-top border-bottom-1px"></div>
+                <div class="mask-bottom border-top-1px"></div>
+                <div class="wheel-wrapper">
+                    <div class="wheel">
+                        <ul class="wheel-scroll diff">
+                        </ul>
+                    </div>
+                    <div class="wheel">
+                        <ul class="wheel-scroll">
+                        </ul>
+                    </div>
+                    <div class="wheel">
+                        <ul class="wheel-scroll">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mf-picker-footer">
+                <img src="./images/ourselfs/time-sure.png" alt="" class="confirm">
+            </div>
+        </div>
+    </div>
+   <!--选项卡-->
+   <div class="am-tabs  am-tabs-ba" data-am-tabs="{noSwipe: 1}" id="doc-tab-demo-1">
+       <ul class="am-tabs-nav am-nav am-nav-tabs"  id="am-tabs-pos">
+           <li class="flex_com am-active" data-index="3">
+                <a href="javascript: void(0)">历史借阅</a>
+            </li>
+           <li class=" flex_com" data-index="0">
+               <a href="javascript: void(0)">待签收</a>
+           </li>
+           <li class="flex_com" data-index="1">
+               <a href="javascript: void(0)">待归还</a>
+           </li>
+           <li class="flex_com" data-index="2">
+               <a href="javascript: void(0)">已归还</a>
+           </li>
+           <li class="flex_com" data-index="4">
+               <a href="javascript: void(0)">已购买</a>
+           </li>
+       </ul>
+  <!--选项卡详情-->
+       <!--代发货-->
+       <div class="am-tabs-bd order-tab">
+           <!--历史借阅-->
+           <div class="am-tab-panel am-active" data-index="3">
+                <div class="order-history">
+                    <div class="title">
+                        <div>已借阅本书</div>
+                        <div>总价值</div>
+                    </div>
+                    <div class="number">
+                        <div id="order-num">暂无数据</div>
+                        <div id="order-price">暂无数据</div>
+                    </div>
+                    <div id="vip-xzy">您当前是小状元会员，享受免费借阅和折扣购书</div>
+                    <div id="vip-xst">您当前是小书童会员，享受免费借阅和折扣购书</div>
+                    <div id="vip-xxc">您当前是小秀才会员，享受免费借阅和折扣购书</div>
+                    <div id="vip-no"><a href="./page/center/per_viplist.html">您还不是会员，点此开通</a></div>
+                </div>
+               <div id="history-dom"></div>
+               <div class="data-none-4-no-more data-no-more">加载中...</div>
+                <div class="data-none data-none-4">
+                    <div class="not_shopp" style="display: block;">
+                        <p>暂无相关记录，快去书城<a href="./book-city/index.html">逛逛吧&gt;&gt;</a></p>
+                    </div>
+                </div>
+           </div>
+           <!-- 待签收 -->
+           <div class="am-tab-panel " data-index="0">
+               <div id="wait-Sign"></div>
+               <div class="data-none-1-no-more data-no-more">加载中...</div>
+               <div class="data-none data-none-1">
+                   <div class="not_shopp" style="display: block;">
+                        <p>暂无相关记录，快去书城<a href="./book-city/index.html">逛逛吧&gt;&gt;</a></p>
+                    </div>
+               </div>
+           </div>
+           <!--待归还-->
+           <div class="am-tab-panel" data-index="1">
+                <div id="wait-return"></div>
+                <div class="data-none-2-no-more data-no-more">加载中...</div>
+                <div class="data-none data-none-2">
+                    <div class="not_shopp" style="display: block;">
+                        <p>暂无相关记录，快去书城<a href="./book-city/index.html">逛逛吧&gt;&gt;</a></p>
+                    </div>
+                </div>
+           </div>
+           <!--已归还-->
+           <div class="am-tab-panel flex_com" data-index="2">
+            <div id="has-return"></div>
+            <div class="data-none-3-no-more data-no-more">加载中...</div>
+            <div class="data-none data-none-3">
+                <div class="not_shopp" style="display: block;">
+                        <p>暂无相关记录，快去书城<a href="./book-city/index.html">逛逛吧&gt;&gt;</a></p>
+                    </div>
+            </div>
+           </div>
+           <!--已够买 -->
+           <div class="am-tab-panel flex_com" data-index="4">
+                <div id="buy-order"></div>
+                <div class="data-none-5-no-more data-no-more">加载中...</div>
+                <div class="data-none data-none-5">
+                    <div class="not_shopp" style="display: block;">
+                        <p>暂无相关记录，快去书城<a href="./book-city/index.html">逛逛吧&gt;&gt;</a></p>
+                    </div>
+                </div>
+           </div>
+        </div>
+        <div id="logistics">
+          <div class="top">
+            <div class="back"><i class="iconfont">&#xe60f;</i><span>返回</span></div>
+            <h3>返回</h3>
+          </div>
+          <div class="logisticsBox">
+            <ul>
+              <li class="li_title">
+                <span class="name"></span>
+                <span class="code"></span>
+              </li>
+            </ul> 
+          </div>
+        </div>
+   </div>
+</div>
+</body>
+  <!--js脚本-->
+  <script src="./js/fastclick.js"></script>
+  <script src="js/amazeui.js"></script>
+  <script src="./js/time-picker.js"></script>
+  <script src="./js/KDNWidget.js"></script>
+  <script src="./js/paea_order.js"></script>
+  <!-- 腾讯统计 -->
+  <script>
+    var _mtac = {"performanceMonitor":1,"senseQuery":1};
+    (function() {
+      var mta = document.createElement("script");
+      mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+      mta.setAttribute("name", "MTAH5");
+      mta.setAttribute("sid", "500624689");
+      mta.setAttribute("cid", "500624690");
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  </script> 
+</html>

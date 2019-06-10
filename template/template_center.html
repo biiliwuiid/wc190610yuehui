@@ -1,0 +1,45 @@
+<!-- 模板：常见问题 -->
+<script id="tem_center_problem" type="text/html">
+  {{each list item index}}
+  <li data-id="{{item.id}}">
+    <div class="per_problem_title"><p>{{item.question}}</p><span></span></div>
+    <!-- <div class="per_problem_text">
+      {{@item.answer}}
+      {{include 'tem__problem_img' item}}
+    </div> -->
+  </li>   
+  {{/each}}
+</script>  
+<!-- 模板：常见问题多图 -->
+<script id="tem__problem_img" type="text/html">
+  {{each pic}}
+    {{if $value.img}}
+    <img src="{{$value.img}}" alt="" />  
+    {{/if}}
+  {{/each}}
+</script>  
+<!-- 模板：已预约故事会/到店/会员活动 -->
+<script id="tem_story_list" type="text/html">
+  {{each list item index}}
+  <li>
+    <div class="list_top clearfix"><p>预约编号:{{item.order_key}}</p></div>
+    <div class="list_center clearfix">
+      <div class="fl">
+        {{if item.activity_name}}
+        <h3>活动名称：{{item.activity_name}}</h3>
+        {{else}}
+        <h3>故事会名称：{{item.lesson_title}}</h3>
+        {{/if}}
+        <p>预约日期：<span>{{item.year}}-{{item.month < 10 ? '0' + item.month : item.month}}-{{item.day < 10 ? '0' + item.day : item.day}}</span></p>
+        <p>预约时间：<span>{{item.start}}-{{item.end}}</span></p>
+        <h4>{{item.name}}</h4>
+      </div>
+      <div class="img fr"><img src="{{item.pic}}" data-original="../../images/personal/img_01.jpg" alt="" /></div>
+    </div>
+    <div class="list_bottom">
+      <p>地址：{{item.address}}</p>
+      <p>电话：{{item.phone}}</p>
+    </div>
+  </li> 
+  {{/each}}
+</script>  

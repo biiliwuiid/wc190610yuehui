@@ -1,0 +1,65 @@
+<!-- 猜你喜欢 -->
+<script id="tem_cart_guess" type="text/html">
+    {{each list as item}}
+    <div class="guess-line">
+        <div class="content text-color">
+            <img src="{{item.book_pic}}" alt="" class="guess-book" data-id="{{item.id}}">
+            <div class="name">{{item.book_name}}</div>
+        <div class="price"><span>￥</span><span>{{item.price}}</span></div>
+        </div>
+    </div>
+    {{/each}}
+</script>  
+<!-- 书包商品 -->
+<script id="tem_commodity" type="text/html">
+    {{each list as item}}
+    {{if item.is_status == 1}}
+    <div class="commodity-line {{item.stock_num <= 0 ? 'is_disabled' : ''}}" data-id="{{item.id}}">
+        {{if item.stock_num > 0}}
+        <div class="selectedBox"></div>
+        {{/if}}
+        <div class="selectBox">
+          <!-- <div class="checkbox"></div> -->
+          <img src="{{item.book_pic}}" alt="" class="commodity-img">    
+        </div>
+        <div class="operationBox">
+            <div class="name">
+                <span>{{item.book_name}}</span>
+                <div>
+                  <div class="love {{item.is_book_mark == 2 ? 'marks' : ''}}" data-id="{{item.id}}">
+                    <img src="./images/satchel/collection.png" alt="" class="collection" >
+                    <img src="./images/satchel/collection_L.png" alt="" class="collection_L">
+                  </div>  
+                  <img src="./images/satchel/delete.png" alt="" class="commodity-delete" data-id="{{item.id}}">
+                </div>
+            </div>
+            <div class="details">{{item.author}}</div>
+            {{if type === 'bag'}}
+            <div class="change">
+            {{else}}
+            <div class="change crat-change">
+                    <div class="price" data-price="{{item.price * item.num}}">
+                        <span>￥</span>
+                        <span class="price">{{item.new_price}}</span>
+                    </div>
+            {{/if}}
+            {{if item.stock_num <= 0}} 
+            <div class="is_disabled">库存不足</div> 
+            {{else if type !== 'bag'}}
+            <div class="controls {{item.num > 1 ? 'on' : ''}}">
+              <img src="./images/satchel/icon_jian.png" alt="" id="cut" data-id="{{item.id}}">
+              {{if type === 'bag'}}
+              <span id="{{'bagCount' + item.id}}">{{item.num}}</span>
+              {{else}}
+              <span id="{{'cratCount' + item.id}}" class="numbers">{{item.num}}</span>
+              {{/if}}
+              <img src="./images/satchel/icon_jia.png" alt="" id="add" data-id="{{item.id}}">
+            </div>
+            {{/if}}
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{/each}}
+</script>
+

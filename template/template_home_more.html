@@ -1,0 +1,25 @@
+<!-- 模板：首页more~~列表 -->
+<script id="tem_home_more" type="text/html">
+  {{each list item index}}
+  <div class="flex_com" data-id="{{item.id}}">
+    <a href="./product-details.html?id={{item.id}}">
+      <img src="{{item.book_pic}}" alt="" class="img">
+      <p>{{item.book_name}}</p>
+    </a>  
+      <span class="whatkin">{{item.book_type}}</span>
+    <div class="bottom-btn flex_row">
+        <div class="bottom-btn-net">
+            <i class="ba1 {{item.is_book_mark == 1 ? '' : 'ba2'}}"></i>
+        </div>
+        <div class="whatsbgwc flex_row">
+          {{if item.is_borrow == 1}}
+          <img src="../images/bookcity/shubao.png" alt="">
+          {{/if}}  
+          {{if item.is_pay == 1}}
+          <img src="../images/bookcity/gwc23.png" alt="">
+          {{/if}}  
+        </div>
+    </div>
+  </div> 
+  {{/each}}
+</script>  

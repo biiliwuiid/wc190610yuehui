@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>悦绘亲子图书馆</title>
+    <link href="../images/login/logo.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <link rel="stylesheet" href="../css/bookcity/bookcity.css" />
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="../js/fitremtaobao2.js"></script>
+    <script src="../js/template.js"></script>
+    <script src="../js/vip_isBeOverdue.js"></script>
+</head>
+<body>
+<div class="body body_mall">
+<!--头部-->
+<div class="header flex_row">
+    <div class="search">
+        <input type="text" placeholder="请输入感兴趣的书吧" maxlength="26" id="search_book">
+        <img src="../images/index/index_62.png" alt="">
+        <ul class="search_result"></ul>
+    </div>
+    <div class="sbgwc flex_row">
+        <div><a href="../shopping.html">
+            <span class="bag">0</span>
+            <img src="../images/index/shubaoxian.png" alt="">
+        </a></div>
+        <div><a href="../shopping.html?page=2">
+            <span class="car">0</span>
+            <img src="../images/index/gouwuchexian.png" alt="">
+        </a></div>
+    </div>
+</div>
+<!---->
+<!--图片轮播-->
+<div class="swiper-container">
+    <div class="swiper-wrapper"></div>
+    <div class="swiper-pagination"></div>
+</div>
+<!---->
+<!--会籍介绍，加入我们-->
+<div class="introduce">
+  <div class="wrap">
+    <div class="joinus flex_row">
+      <div class="readcan">
+        <div><span></span><span></span><span></span></div>
+        <img src="../images/index/index_7.png" alt="">
+        <img src="../images/index/index_35.png" alt="">
+      </div>
+      <div class="membership">
+        <p>会籍介绍</p>
+        <a href="../page/center/per_viplist.html" class="blue_points">加入我们</a>
+      </div>
+    </div>
+  </div>     
+</div>
+<!---->
+<!--童书分类-->
+<div class="childbook flex_com">
+    <div class="kinds" id="first-tag">
+        
+    </div>
+</div>
+<div class="childbook childbooks flex_com">
+
+    <div class="kinds">
+        <div class="title"></div>
+        <div id="second-tag">
+        </div>
+        </div>
+</div>
+<!--分类-->
+<div class="whatulike">
+    <div class="second flex_row" id="book">
+    </div>
+    <div class="loading">加载中...</div>
+</div>
+<!---->
+<footer>
+    <div class="wrap">
+      <div class="footerBox flex_row">
+        <div class="navBox">
+          <div class="icon"><a href="../index.html"><img src="../images/index/shuwuxian.png" alt=""></a></div>
+           <a href="../index.html">首页</a>
+        </div>
+        <div class="navBox">
+           <div class="icon"><a href="javascript:;"><img src="../images/index/shuchengcai .png" alt=""></a></div>
+           <a href="javascript:;">书城</a>
+        </div>
+        <div class="logoBox">
+           <img src="../images/index/index_51.png" alt="" class="_center">
+        </div>
+        <div class="navBox">
+           <div class="icon"><a href="../shopping.html"><img src="../images/index/shubaoxian.png" alt=""></a></div>
+           <a href="../shopping.html">书包/购物车</a>
+        </div>
+        <div class="navBox">
+           <div class="icon"><a href="../ourselfs.html"><img src="../images/index/wodexian.png" alt=""></a></div>
+           <a href="../ourselfs.html">我的</a>
+        </div>
+    </div></div>
+  </footer>
+</div>
+  <!--js脚本-->
+  <script src="../js/swiper.jquery.min.js"></script>
+  <script src="../js/fastclick.js"></script>
+  <script src="../js/md5.js"></script>
+  <script src="../js/paea_bookCity.js"></script>
+  <!-- 腾讯统计 -->
+  <script>
+    var _mtac = {"performanceMonitor":1,"senseQuery":1};
+    (function() {
+      var mta = document.createElement("script");
+      mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+      mta.setAttribute("name", "MTAH5");
+      mta.setAttribute("sid", "500624689");
+      mta.setAttribute("cid", "500624690");
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  </script>
+</body>
+</html>
